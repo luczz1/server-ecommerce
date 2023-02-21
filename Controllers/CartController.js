@@ -80,11 +80,9 @@ class CartController {
                         throw err;
                       }
 
-                      response
-                        .status(200)
-                        .json({
-                          message: "Quantidade atualizada com sucesso.",
-                        });
+                      response.status(200).json({
+                        message: "Quantidade atualizada com sucesso.",
+                      });
                     }
                   );
                 } else {
@@ -111,18 +109,18 @@ class CartController {
   }
 
   deleteCartItem(request, response) {
-    const { id } = request.params;
+    const { id_usuario, id_produto } = request.params;
 
     return connection.query(
-      `DELETE FROM carrinho WHERE id_produto = ${id}`,
+      `DELETE FROM carrinho WHERE id_usuario = ${id_usuario} AND id_produto = ${id_produto}`,
       (err, res) => {
         if (err) {
           throw err;
         }
 
-        if (res.length <= 0) {
+        if (res.affectedRows <= 0) {
           return response
-            .status(400)
+            .status(404)
             .json({ error: "Produto não encontrado no carrinho." });
         }
 

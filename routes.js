@@ -29,7 +29,7 @@ routes.delete("/enderecos/:id", addressController.deleteAddress);
 //cart
 routes.get("/carrinho/:id", cartController.getUserCartByID);
 routes.post("/carrinho", cartController.postCart);
-routes.delete("/carrinho/:id", cartController.deleteCartItem);
+routes.delete("/carrinho/:id_usuario/:id_produto", cartController.deleteCartItem);
 
 
 export default routes;

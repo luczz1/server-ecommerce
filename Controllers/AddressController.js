@@ -120,7 +120,7 @@ class AddressController {
         if (res.length <= 0) {
           return response
             .status(400)
-            .json({ error: "Produto não encontrado." });
+            .json({ error: "Endereço não encontrado." });
         }
 
         response.status(200).json({ message: "Deletado com sucesso." });
