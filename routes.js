@@ -23,7 +23,7 @@ routes.post("/usuarios", ValidateToken, userController.postUsers);
 routes.put("/usuarios", ValidateToken, userController.putUsers);
 routes.delete("/usuarios/:id", ValidateToken, userController.deleteUsers);
 
-//address
+//addresses
 routes.get("/enderecos/:id", ValidateToken, addressController.getUserAddressByID);
 routes.post("/enderecos", ValidateToken, addressController.postAddress);
 routes.put("/enderecos", ValidateToken, addressController.putAddress);

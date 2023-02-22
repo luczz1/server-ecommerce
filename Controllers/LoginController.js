@@ -35,7 +35,7 @@ class LoginController {
 }
 
 function generateAccessToken(username) {
-  return jwt.sign(username, tokenConfig.secret, { expiresIn: "43200" });
+  return jwt.sign(username, tokenConfig.secret, { expiresIn: 43200 });
 }
 
 export default new LoginController();
