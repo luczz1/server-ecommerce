@@ -1,10 +1,4 @@
-import express from "express";
 import connection from '../connection.js'
-
-const productApp = express();
-
-productApp.use(express.json());
-
 class ProductsController {
   getProducts(request, response) {
       return connection.query("SELECT * FROM produtos", (err, res) => {

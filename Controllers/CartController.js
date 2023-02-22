@@ -1,10 +1,4 @@
-import express from "express";
 import connection from "../connection.js";
-
-const cartApp = express();
-
-cartApp.use(express.json());
-
 class CartController {
   getUserCartByID(request, response) {
     const { id } = request.params;

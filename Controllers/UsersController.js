@@ -1,10 +1,4 @@
-import express from "express";
 import connection from '../connection.js'
-
-const userApp = express();
-
-userApp.use(express.json());
-
 class UsersController {
   getUsers(request, response) {
       return connection.query("SELECT * FROM usuarios", (err, res) => {

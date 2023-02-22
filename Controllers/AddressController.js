@@ -1,9 +1,4 @@
-import express from "express";
 import connection from "../connection.js";
-
-const addressApp = express();
-
-addressApp.use(express.json());
 
 class AddressController {
   getUserAddressByID(request, response) {
